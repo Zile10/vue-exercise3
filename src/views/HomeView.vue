@@ -1,18 +1,31 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <section id="landing">
+      <h2>Keeping The World Happy, with Free World Wide Shipping.</h2>
+      <h3>ClothCuts! Clothed in the Finest</h3>
+
+    </section>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    
   }
 }
 </script>
+
+<style>
+#landing {
+  /* scroll-margin: 100px; */
+  height: 680px;
+  background-image: url(../assets/nasa-banner-unsplash.jpg);
+  background-size: cover;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+</style>

@@ -1,10 +1,35 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <!-- <div v-if="isAuthenticated"> -->
+    <NavBar/>
+    <router-view/>
+    <Footer/>
+  <!-- </div> -->
+  <!-- <LoginView v-else  @login="authenticate()"/> -->
 </template>
+
+<script>
+  import LoginView from '@/views/LoginView.vue';
+  import NavBar from '@/components/NavBar.vue';
+  import Footer from '@/components/Footer.vue';
+  export default {
+    components: {
+      LoginView,
+      NavBar,
+      Footer
+    },
+    data() {
+      return {
+        isAuthenticated: false,
+      }
+    },
+    methods: {
+      authenticate(){
+        this.isAuthenticated = true
+        console.log('authenticated');
+      }
+    }
+  }
+</script>
 
 <style>
 #app {
@@ -17,11 +42,14 @@
 
 nav {
   padding: 30px;
+  color: #fff;
+
 }
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  text-decoration: none;
+  color: #fff;
 }
 
 nav a.router-link-exact-active {
